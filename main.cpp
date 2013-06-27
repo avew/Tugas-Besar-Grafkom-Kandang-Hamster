@@ -101,6 +101,19 @@ void bawahKandang(int lebar) {
 	glPopMatrix();
 }
 
+void pohon() {
+	glPushMatrix();
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glutSolidCone(15.0, 15.0, 15, 10);
+	glPopMatrix();
+
+	glPushMatrix();
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(-1.0, 0.0, -20.0);
+	cylinder(8.0, 8.0, 20.0);
+	glPopMatrix();
+}
+
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
@@ -111,19 +124,10 @@ void display(void) {
 
 	//Tambahin Objek dibawah ini
 
-	glPushMatrix();
-	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glutSolidCone(15.0, 15.0, 15, 10);
-	glPopMatrix();
+	pohon();
 
-	glPushMatrix();
-	glRotated(-90.0,1.0,0.0,0.0);
-	glTranslated(-1.0,0.0, -20.0);
-	cylinder(8.0, 8.0, 20.0);
-	glPopMatrix();
-
-
-
+	glTranslated(0.0, 0.0, 50.0);
+	pohon();
 
 	/*//tiang 1
 	 glPushMatrix();

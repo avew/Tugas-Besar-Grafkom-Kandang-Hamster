@@ -124,49 +124,67 @@ void display(void) {
 
 	//Tambahin Objek dibawah ini
 
+	//Hiasan Pohon Dipojok
+	glPushMatrix();
+	glTranslated(-90.0, 25.0, -90.0);
 	pohon();
+	glPopMatrix();
 
-	glTranslated(0.0, 0.0, 50.0);
+	glPushMatrix();
+	glTranslated(-85.0, 25.0, -70.0);
 	pohon();
+	glPopMatrix();
 
-	/*//tiang 1
-	 glPushMatrix();
-	 glRotated(-90, 1.0, 0.0, 0.0);
-	 glTranslated(90.0, 100.0, 0.0);
-	 cylinder(3.0, 3.0, 150);
-	 glPopMatrix();
+	glPushMatrix();
+	glTranslated(-70.0, 20.0, -90.0);
+	pohon();
+	glPopMatrix();
 
-	 //tiang 2
-	 glPushMatrix();
-	 glRotated(-90, 1.0, 0.0, 0.0);
-	 glTranslated(90.0, -100.0, 0.0);
-	 cylinder(3.0, 3.0, 150);
-	 glPopMatrix();
+	//Tempat Minum
+	glPushMatrix();
+	glTranslated(-60.0,10.0,-60.0);
+	glRotated(-270.0, 1.0, 0.0, 0.0);
+	cylinder(15.0, 10.0, 3.0);
+	glPopMatrix();
 
-	 //tiang 3
-	 glPushMatrix();
-	 glRotated(-90, 1.0, 0.0, 0.0);
-	 glTranslated(-100.0, 100.0, 0.0);
-	 cylinder(3.0, 3.0, 150);
-	 glPopMatrix();
+//	//tiang 1
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(90.0, 100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
+//
+////	//tiang 2
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(90.0, -100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
 
-	 //tiang 4
-	 glPushMatrix();
-	 glRotated(-90, 1.0, 0.0, 0.0);
-	 glTranslated(-100.0, -100.0, 0.0);
-	 cylinder(3.0, 3.0, 150);
-	 glPopMatrix();
+//	//tiang 3
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(-100.0, 100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
 
-	 //Bawah
-	 glPushMatrix();
-	 bawahKandang(10);
-	 glPopMatrix();
+//	//tiang 4
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(-100.0, -100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
 
-	 //atas
-	 glPushMatrix();
-	 glTranslated(0.0, 150.0, 0.0);
-	 bawahKandang(10);
-	 glPopMatrix();*/
+	//Bawah
+	glPushMatrix();
+	bawahKandang(10);
+	glPopMatrix();
+
+	//atas
+//	glPushMatrix();
+//	glTranslated(0.0, 150.0, 0.0);
+//	bawahKandang(10);
+//	glPopMatrix();
 
 	glutSwapBuffers();
 	glFlush();

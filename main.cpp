@@ -118,8 +118,8 @@ void display(void) {
 
 	glPushMatrix();
 	glRotated(-90.0,1.0,0.0,0.0);
-	glTranslated(1.0,-1.0, -8.0);
-	cylinder(8.0, 8.0, 8.0);
+	glTranslated(-1.0,0.0, -20.0);
+	cylinder(8.0, 8.0, 20.0);
 	glPopMatrix();
 
 

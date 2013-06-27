@@ -114,6 +114,36 @@ void pohon() {
 	glPopMatrix();
 }
 
+void segitiga() {
+	glBegin(GL_QUADS);
+	glVertex3f(-2, -2, 2);
+	glVertex3f(-2, -2, -2);
+	glVertex3f(-2, 2, -2);
+	glVertex3f(-2, 2, 2);
+	glEnd();
+
+	//Sisi-sisi Prisma
+	glBegin(GL_TRIANGLES);
+	glColor3d(1.0f, 1.0f, 1.0f);
+	//Segitiga Warna Merah
+	glVertex3f(-2, -2, 2);
+	glVertex3f(8, 0, 0);
+	glVertex3f(-2, 2, 2);
+	//Segitiga Warna Hijau
+	glVertex3f(-2, 2, 2);
+	glVertex3f(8, 0, 0);
+	glVertex3f(-2, 2, -2);
+	//Segitiga Warna Biru
+	glVertex3f(-2, 2, -2);
+	glVertex3f(8, 0, 0);
+	glVertex3f(-2, -2, -2);
+	//Segitiga Warna Putih
+	glVertex3f(-2, -2, -2);
+	glVertex3f(8, 0, 0);
+	glVertex3f(-2, -2, 2);
+	glEnd();
+}
+
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
@@ -123,6 +153,32 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
+//	glPushMatrix();
+//	glTranslated(0.0, 15.0, 0.0);
+//	glRotated(90.0, 0.0, 0.0, 1.0);
+//	glScaled(5.0, 20.0, 20.0);
+//	segitiga();
+//	glPopMatrix();
+
+	glPushMatrix();
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(0.0, 95.0, 5.0);
+	cylinder(6.0, 6.0, 15.0);
+	for (int x = 0; x < 4; x++) {
+		glTranslated(0.0, -15.0, 0.0);
+		cylinder(6.0, 6.0, 15.0);
+	}
+	glPopMatrix();
+
+	glPushMatrix();
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(0.0, -10.0, 5.0);
+	cylinder(6.0, 6.0, 15.0);
+	for (int x = 0; x < 6; x++) {
+		glTranslated(-15.0, 0.0, 0.0);
+		cylinder(6.0, 6.0, 15.0);
+	}
+	glPopMatrix();
 
 	//Hiasan Pohon Dipojok
 	glPushMatrix();
@@ -142,7 +198,7 @@ void display(void) {
 
 	//Tempat Minum
 	glPushMatrix();
-	glTranslated(-60.0,10.0,-60.0);
+	glTranslated(-60.0, 10.0, -60.0);
 	glRotated(-270.0, 1.0, 0.0, 0.0);
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();

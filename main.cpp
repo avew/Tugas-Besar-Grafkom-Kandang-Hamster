@@ -189,83 +189,90 @@ void display(void) {
 	muterMuteran();
 	glPopMatrix();
 
+	//atap
+	glPushMatrix();
+	glTranslated(5.0, 5.0, 0.0);
+	glRotated(90.0, 0.0, 0.0, 1.0);
+	glScaled(5.0, 10.0, 10.0);
+	segitiga();
+	glPopMatrix();
+	//bawah
+	glPushMatrix();
+	glTranslated(10,10,10);//cube
+	glScaled(3.0,3.0,3.0);
+	glutSolidCube(10);
+	glPopMatrix();
+
 //	glPushMatrix();
-//	glTranslated(0.0, 15.0, 0.0);
-//	glRotated(90.0, 0.0, 0.0, 1.0);
-//	glScaled(5.0, 20.0, 20.0);
-//	segitiga();
+//	glRotated(-90.0, 1.0, 0.0, 0.0);
+//	glTranslated(0.0, 95.0, 5.0);
+//	cylinder(6.0, 6.0, 15.0);
+//	for (int x = 0; x < 4; x++) {
+//		glTranslated(0.0, -15.0, 0.0);
+//		cylinder(6.0, 6.0, 15.0);
+//	}
 //	glPopMatrix();
-
-	glPushMatrix();
-	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(0.0, 95.0, 5.0);
-	cylinder(6.0, 6.0, 15.0);
-	for (int x = 0; x < 4; x++) {
-		glTranslated(0.0, -15.0, 0.0);
-		cylinder(6.0, 6.0, 15.0);
-	}
-	glPopMatrix();
-
-	glPushMatrix();
-	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(0.0, -10.0, 5.0);
-	cylinder(6.0, 6.0, 15.0);
-	for (int x = 0; x < 6; x++) {
-		glTranslated(-15.0, 0.0, 0.0);
-		cylinder(6.0, 6.0, 15.0);
-	}
-	glPopMatrix();
-
-	//Hiasan Pohon Dipojok
-	glPushMatrix();
-	glTranslated(-90.0, 25.0, -90.0);
-	pohon();
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslated(-85.0, 25.0, -70.0);
-	pohon();
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslated(-70.0, 20.0, -90.0);
-	pohon();
-	glPopMatrix();
-
-	//Tempat Minum
-	glPushMatrix();
-	glTranslated(-60.0, 10.0, -60.0);
-	glRotated(-270.0, 1.0, 0.0, 0.0);
-	cylinder(15.0, 10.0, 3.0);
-	glPopMatrix();
-
-////	//tiang 1
+//
 //	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(90.0, 100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
+//	glRotated(-90.0, 1.0, 0.0, 0.0);
+//	glTranslated(0.0, -10.0, 5.0);
+//	cylinder(6.0, 6.0, 15.0);
+//	for (int x = 0; x < 6; x++) {
+//		glTranslated(-15.0, 0.0, 0.0);
+//		cylinder(6.0, 6.0, 15.0);
+//	}
 //	glPopMatrix();
+//
+//	//Hiasan Pohon Dipojok
+//	glPushMatrix();
+//	glTranslated(-90.0, 25.0, -90.0);
+//	pohon();
+//	glPopMatrix();
+//
+//	glPushMatrix();
+//	glTranslated(-85.0, 25.0, -70.0);
+//	pohon();
+//	glPopMatrix();
+//
+//	glPushMatrix();
+//	glTranslated(-70.0, 20.0, -90.0);
+//	pohon();
+//	glPopMatrix();
+//
+//	//Tempat Minum
+//	glPushMatrix();
+//	glTranslated(-60.0, 10.0, -60.0);
+//	glRotated(-270.0, 1.0, 0.0, 0.0);
+//	cylinder(15.0, 10.0, 3.0);
+//	glPopMatrix();
+//
+//////	//tiang 1
+////	glPushMatrix();
+////	glRotated(-90, 1.0, 0.0, 0.0);
+////	glTranslated(90.0, 100.0, 0.0);
+////	cylinder(3.0, 3.0, 150);
+////	glPopMatrix();
+//////
+////////	//tiang 2
+////	glPushMatrix();
+////	glRotated(-90, 1.0, 0.0, 0.0);
+////	glTranslated(90.0, -100.0, 0.0);
+////	cylinder(3.0, 3.0, 150);
+////	glPopMatrix();
 ////
-//////	//tiang 2
-//	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(90.0, -100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
-//	glPopMatrix();
-//
-////	//tiang 3
-//	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(-100.0, 100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
-//	glPopMatrix();
-//
-////	//tiang 4
-//	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(-100.0, -100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
-//	glPopMatrix();
+//////	//tiang 3
+////	glPushMatrix();
+////	glRotated(-90, 1.0, 0.0, 0.0);
+////	glTranslated(-100.0, 100.0, 0.0);
+////	cylinder(3.0, 3.0, 150);
+////	glPopMatrix();
+////
+//////	//tiang 4
+////	glPushMatrix();
+////	glRotated(-90, 1.0, 0.0, 0.0);
+////	glTranslated(-100.0, -100.0, 0.0);
+////	cylinder(3.0, 3.0, 150);
+////	glPopMatrix();
 
 //	//Bawah
 	glPushMatrix();

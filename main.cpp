@@ -15,7 +15,7 @@
 #include "imageloader.h"
 #include "vec3f.h"
 
-static GLfloat spin, spin2 = 0.0;
+static GLfloat spin = 0.0;
 float angle = 0;
 GLuint texture[2];
 

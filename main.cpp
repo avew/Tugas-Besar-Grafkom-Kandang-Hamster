@@ -144,6 +144,36 @@ void segitiga() {
 	glEnd();
 }
 
+void muterMuteran() {
+	glPushMatrix();
+	glTranslated(00.0, 20.0, -1.0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	glRotated(30.0, 1.0, 0.0, 0.0);
+	cylinder(3.0, 3.0, 20.0);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(00.0, 20.0, 1.0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	glRotated(-30.0, 1.0, 0.0, 0.0);
+	cylinder(3.0, 3.0, 20.0);
+	glPopMatrix();
+
+	glPushMatrix();
+	glutSolidCube(10);
+	glTranslated(0.0, 0.0, 10.0);
+	glutSolidCube(10);
+	glTranslated(0.0, 0.0, -20.0);
+	glutSolidCube(10);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(0.0, 40.0, 0.0);
+	glRotated(-90, 0.0, 1.0, 0.0);
+	cylinder(20.0, 20.0, 5.0);
+	glPopMatrix();
+}
+
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
@@ -153,6 +183,12 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
+
+	glPushMatrix();
+	glTranslated(-90.0, 5.0, 70.0);
+	muterMuteran();
+	glPopMatrix();
+
 //	glPushMatrix();
 //	glTranslated(0.0, 15.0, 0.0);
 //	glRotated(90.0, 0.0, 0.0, 1.0);
@@ -203,40 +239,40 @@ void display(void) {
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();
 
-//	//tiang 1
+////	//tiang 1
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(90.0, 100.0, 0.0);
 //	cylinder(3.0, 3.0, 150);
 //	glPopMatrix();
-//
-////	//tiang 2
+////
+//////	//tiang 2
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(90.0, -100.0, 0.0);
 //	cylinder(3.0, 3.0, 150);
 //	glPopMatrix();
-
-//	//tiang 3
+//
+////	//tiang 3
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(-100.0, 100.0, 0.0);
 //	cylinder(3.0, 3.0, 150);
 //	glPopMatrix();
-
-//	//tiang 4
+//
+////	//tiang 4
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(-100.0, -100.0, 0.0);
 //	cylinder(3.0, 3.0, 150);
 //	glPopMatrix();
 
-	//Bawah
+//	//Bawah
 	glPushMatrix();
 	bawahKandang(10);
 	glPopMatrix();
 
-	//atas
+//	//atas
 //	glPushMatrix();
 //	glTranslated(0.0, 150.0, 0.0);
 //	bawahKandang(10);

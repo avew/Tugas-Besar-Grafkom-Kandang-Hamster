@@ -183,7 +183,6 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
-
 	glPushMatrix();
 	glTranslated(-90.0, 5.0, 70.0);
 	muterMuteran();

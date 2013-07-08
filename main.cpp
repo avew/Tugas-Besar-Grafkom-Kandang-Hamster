@@ -208,21 +208,15 @@ void display(void) {
 
 	//Tambahin Objek dibawah ini
 	glPushMatrix();
-
-	glPopMatrix();
-
-
-	glPushMatrix();
 	glTranslated(-90.0, 5.0, 70.0);
 	muterMuteran();
 	glPopMatrix();
 
 	glPushMatrix();
-	glRotated(90.0,0.0,1.0,0.0);
-	glTranslated(-80.0,0.0,40.0);
+	glRotated(90.0, 0.0, 1.0, 0.0);
+	glTranslated(-80.0, 0.0, 40.0);
 	rumahMewah();
 	glPopMatrix();
-
 
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
@@ -236,6 +230,18 @@ void display(void) {
 
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
+
+	glTranslated(0.0, 95.0, 5.0);
+	cylinder(6.0, 6.0, 15.0);
+	for (int x = 0; x < 4; x++) {
+		glTranslated(0.0, -15.0, 0.0);
+		cylinder(6.0, 6.0, 15.0);
+	}
+	glPopMatrix();
+
+	glPushMatrix();
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+
 	glTranslated(0.0, -10.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
 	for (int x = 0; x < 6; x++) {

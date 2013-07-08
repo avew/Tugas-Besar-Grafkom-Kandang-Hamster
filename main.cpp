@@ -215,17 +215,15 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
-	glPushMatrix();
-	glTranslated(-90.0, 5.0, 70.0);
-	muterMuteran();
-	glPopMatrix();
 
+//	//Rumah MeeuuaaHH
 	glPushMatrix();
 	glRotated(90.0, 0.0, 1.0, 0.0);
 	glTranslated(-80.0, 0.0, 40.0);
 	rumahMewah();
 	glPopMatrix();
 
+	//Pager
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, 95.0, 5.0);
@@ -238,13 +236,26 @@ void display(void) {
 
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
-
 	glTranslated(0.0, 95.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
 	for (int x = 0; x < 4; x++) {
 		glTranslated(0.0, -15.0, 0.0);
 		cylinder(6.0, 6.0, 15.0);
 	}
+	glPopMatrix();
+
+	glPushMatrix();
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(0.0, -95.0, 5.0);
+	cylinder(6.0, 6.0, 15.0);
+	glTranslated(4.0, 15.0, 0.0);
+	cylinder(6.0, 6.0, 15.0);
+	glTranslated(8.0, 15.0, 0.0);
+	cylinder(6.0, 6.0, 15.0);
+	glTranslated(12.0, 15.0, 0.0);
+	cylinder(6.0, 6.0, 15.0);
+	glTranslated(16.0, 15.0, 0.0);
+	cylinder(6.0, 6.0, 15.0);
 	glPopMatrix();
 
 	glPushMatrix();
@@ -269,8 +280,19 @@ void display(void) {
 	pohon();
 	glPopMatrix();
 
+	//pohon
 	glPushMatrix();
-	glTranslated(-90.0, 5.0, 70.0);
+	glTranslated(-90.0, 25.0, 90.0);
+	pohon();
+	glTranslated(30.0, 0.0, 0.0);
+	pohon();
+	glTranslated(30.0, 0.0, 0.0);
+	pohon();
+	glPopMatrix();
+
+	//Muter"an
+	glPushMatrix();
+	glTranslated(-90.0, 5.0, 50.0);
 	muterMuteran();
 	glPopMatrix();
 
@@ -318,32 +340,32 @@ void display(void) {
 	glPopMatrix();
 //
 //////	//tiang 1
-////	glPushMatrix();
-////	glRotated(-90, 1.0, 0.0, 0.0);
-////	glTranslated(90.0, 100.0, 0.0);
-////	cylinder(3.0, 3.0, 150);
-////	glPopMatrix();
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(90.0, 100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
 //////
 ////////	//tiang 2
-////	glPushMatrix();
-////	glRotated(-90, 1.0, 0.0, 0.0);
-////	glTranslated(90.0, -100.0, 0.0);
-////	cylinder(3.0, 3.0, 150);
-////	glPopMatrix();
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(90.0, -100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
 ////
 //////	//tiang 3
-////	glPushMatrix();
-////	glRotated(-90, 1.0, 0.0, 0.0);
-////	glTranslated(-100.0, 100.0, 0.0);
-////	cylinder(3.0, 3.0, 150);
-////	glPopMatrix();
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(-100.0, 100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
 ////
 //////	//tiang 4
-////	glPushMatrix();
-////	glRotated(-90, 1.0, 0.0, 0.0);
-////	glTranslated(-100.0, -100.0, 0.0);
-////	cylinder(3.0, 3.0, 150);
-////	glPopMatrix();
+//	glPushMatrix();
+//	glRotated(-90, 1.0, 0.0, 0.0);
+//	glTranslated(-100.0, -100.0, 0.0);
+//	cylinder(3.0, 3.0, 150);
+//	glPopMatrix();
 
 //	//Bawah
 	glPushMatrix();

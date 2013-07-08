@@ -215,7 +215,6 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
-<<<<<<< HEAD
 	glPushMatrix();
 	glTranslated(-90.0, 5.0, 70.0);
 	muterMuteran();
@@ -269,8 +268,6 @@ void display(void) {
 	glTranslated(-85.0, 25.0, -70.0);
 	pohon();
 	glPopMatrix();
-=======
->>>>>>> 6c083465d293935dbdaba4ecc64d08cd81154f3d
 
 //	glPushMatrix();
 //	glTranslated(-90.0, 5.0, 70.0);
@@ -349,9 +346,9 @@ void display(void) {
 ////	glPopMatrix();
 
 //	//Bawah
-//	glPushMatrix();
-//	bawahKandang(10);
-//	glPopMatrix();
+	glPushMatrix();
+	bawahKandang(10);
+	glPopMatrix();
 
 //	//atas
 //	glPushMatrix();

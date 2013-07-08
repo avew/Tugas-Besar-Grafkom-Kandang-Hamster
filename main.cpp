@@ -198,6 +198,14 @@ void muterMuteran() {
 	glPopMatrix();
 }
 
+void atapRumah() {
+	glPushMatrix();
+	glRotated(90, 0.0, 0.0, 1.0);
+	glScaled(5.0, 25.0, 25.0);
+	segitiga();
+	glPopMatrix();
+}
+
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
@@ -207,6 +215,7 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
+<<<<<<< HEAD
 	glPushMatrix();
 	glTranslated(-90.0, 5.0, 70.0);
 	muterMuteran();
@@ -260,18 +269,56 @@ void display(void) {
 	glTranslated(-85.0, 25.0, -70.0);
 	pohon();
 	glPopMatrix();
+=======
+>>>>>>> 6c083465d293935dbdaba4ecc64d08cd81154f3d
 
-	glPushMatrix();
-	glTranslated(-70.0, 20.0, -90.0);
-	pohon();
-	glPopMatrix();
+//	glPushMatrix();
+//	glTranslated(-90.0, 5.0, 70.0);
+//	muterMuteran();
+//	glPopMatrix();
 
-	//Tempat Minum
-	glPushMatrix();
-	glTranslated(-60.0, 10.0, -60.0);
-	glRotated(-270.0, 1.0, 0.0, 0.0);
-	cylinder(15.0, 10.0, 3.0);
-	glPopMatrix();
+//	glPushMatrix();
+//	glRotated(-90.0, 1.0, 0.0, 0.0);
+//	glTranslated(0.0, 95.0, 5.0);
+//	cylinder(6.0, 6.0, 15.0);
+//	for (int x = 0; x < 4; x++) {
+//		glTranslated(0.0, -15.0, 0.0);
+//		cylinder(6.0, 6.0, 15.0);
+//	}
+//	glPopMatrix();
+//
+//	glPushMatrix();
+//	glRotated(-90.0, 1.0, 0.0, 0.0);
+//	glTranslated(0.0, -10.0, 5.0);
+//	cylinder(6.0, 6.0, 15.0);
+//	for (int x = 0; x < 6; x++) {
+//		glTranslated(-15.0, 0.0, 0.0);
+//		cylinder(6.0, 6.0, 15.0);
+//	}
+//	glPopMatrix();
+//
+//	//Hiasan Pohon Dipojok
+//	glPushMatrix();
+//	glTranslated(-90.0, 25.0, -90.0);
+//	pohon();
+//	glPopMatrix();
+//
+//	glPushMatrix();
+//	glTranslated(-85.0, 25.0, -70.0);
+//	pohon();
+//	glPopMatrix();
+//
+//	glPushMatrix();
+//	glTranslated(-70.0, 20.0, -90.0);
+//	pohon();
+//	glPopMatrix();
+//
+//	//Tempat Minum
+//	glPushMatrix();
+//	glTranslated(-60.0, 10.0, -60.0);
+//	glRotated(-270.0, 1.0, 0.0, 0.0);
+//	cylinder(15.0, 10.0, 3.0);
+//	glPopMatrix();
 //
 //////	//tiang 1
 ////	glPushMatrix();
@@ -302,9 +349,9 @@ void display(void) {
 ////	glPopMatrix();
 
 //	//Bawah
-	glPushMatrix();
-	bawahKandang(10);
-	glPopMatrix();
+//	glPushMatrix();
+//	bawahKandang(10);
+//	glPopMatrix();
 
 //	//atas
 //	glPushMatrix();

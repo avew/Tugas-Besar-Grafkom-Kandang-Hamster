@@ -242,25 +242,29 @@ void display(void) {
 	//Tambahin Objek dibawah ini
 	glPushMatrix();
 	glRotated(90, 0, 1, 0);
-	glTranslated(55, 20, 60);
+	//glTranslated(55, 20, 60);
+
+	//tangga
+	glTranslated(30, 0, 60);
 	cylinder(3, 3, 10);
 	for (int x = 0; x < 3; x++) {
-		glTranslated(10, 5, 5);
-		cylinder(3, 3, 10);
+		glTranslated(10, 10, 0);
+		cylinder(5, 5, 10);
 	}
 	glPopMatrix();
 
 	//Tempat Minum galon
-	glPushMatrix();
-	glTranslated(45.0, 0.0, -85.0);
-	glRotated(-90.0, 0.0, 1.0, 0.0);
-	tempatminum();
-	glPopMatrix();
+//	glPushMatrix();
+//	glTranslated(45.0, 0.0, -85.0);
+//	glRotated(-90.0, 0.0, 1.0, 0.0);
+//	tempatminum();
+//	glPopMatrix();
 
 ////	//Rumah MeeuuaaHH
 	glPushMatrix();
-	glRotated(90.0, 0.0, 1.0, 0.0);
-	glTranslated(-80.0, 0.0, 40.0);
+	//glRotated(90.0, 1.0, 0.0, 0.0);
+	glTranslated(50.0, 1.0, -85.0);
+	glRotated(90.0,0.0,1.0,0.0);
 	rumahMewah();
 	glPopMatrix();
 

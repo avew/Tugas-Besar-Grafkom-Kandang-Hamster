@@ -230,6 +230,7 @@ void tempatminum() {
 	glPopMatrix();
 
 }
+
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
@@ -239,8 +240,17 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
+	glPushMatrix();
+	glRotated(90, 0, 1, 0);
+	glTranslated(55, 20, 60);
+	cylinder(3, 3, 10);
+	for (int x = 0; x < 3; x++) {
+		glTranslated(10, 5, 5);
+		cylinder(3, 3, 10);
+	}
+	glPopMatrix();
 
-//Tempat Minum galon
+	//Tempat Minum galon
 	glPushMatrix();
 	glTranslated(45.0, 0.0, -85.0);
 	glRotated(-90.0, 0.0, 1.0, 0.0);
@@ -254,7 +264,7 @@ void display(void) {
 	rumahMewah();
 	glPopMatrix();
 
-//Pager
+//Pagar
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, -95.0, 5.0);

@@ -33,6 +33,7 @@ void initRendering() {
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_NORMALIZE);
+
 	glShadeModel(GL_SMOOTH);
 
 }

@@ -206,7 +206,32 @@ void atapRumah() {
 	segitiga();
 	glPopMatrix();
 }
+void tempatminum(){
+	glPushMatrix();
+	glTranslated(0.0,0.5,0.0);
+	glutSolidCube(25);
+	glTranslated(0.0,20.0,0.0);
+	glutSolidCube(20);
+	glTranslated(0.0,10,0.0);
+	glutSolidCube(20);
+	glPopMatrix();
 
+	glPushMatrix();
+	glTranslated(0.-1,43.0,0.0);
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	cylinder(10.0,10.0,15.0);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(5.0,27.0,0.0);
+	glRotated(90.0,0.0, 1.0, 0.0);
+	glRotated(40.0,1.0, 0.0, 0.0);
+	cylinder(1.0,1.0,15.0);
+	glPopMatrix();
+
+
+
+}
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
@@ -217,14 +242,23 @@ void display(void) {
 
 	//Tambahin Objek dibawah ini
 
-//	//Rumah MeeuuaaHH
+
+glPushMatrix();
+glTranslated(50.0,0.0,-85.0);
+glRotated(-90.0,0.0,1.0,0.0);
+tempatminum();
+glPopMatrix();
+
+
+
+////	//Rumah MeeuuaaHH
 	glPushMatrix();
 	glRotated(90.0, 0.0, 1.0, 0.0);
 	glTranslated(-80.0, 0.0, 40.0);
 	rumahMewah();
 	glPopMatrix();
-
-	//Pager
+//
+//	//Pager
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, 95.0, 5.0);
@@ -269,8 +303,8 @@ void display(void) {
 		cylinder(6.0, 6.0, 15.0);
 	}
 	glPopMatrix();
-
-	//Hiasan Pohon Dipojok
+//
+//	//Hiasan Pohon Dipojok
 	glPushMatrix();
 	glTranslated(-90.0, 25.0, -90.0);
 	pohon();
@@ -290,8 +324,8 @@ void display(void) {
 	glTranslated(30.0, 0.0, 0.0);
 	pohon();
 	glPopMatrix();
-
-	//Muter"an
+//
+//	//Muter"an
 	glPushMatrix();
 	glTranslated(-90.0, 5.0, 50.0);
 	muterMuteran();
@@ -332,13 +366,15 @@ void display(void) {
 	glTranslated(-70.0, 20.0, -90.0);
 	pohon();
 	glPopMatrix();
-
-	//Tempat Minum
+//
+//	//Tempat Minum
 	glPushMatrix();
 	glTranslated(-60.0, 10.0, -60.0);
 	glRotated(-270.0, 1.0, 0.0, 0.0);
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();
+
+
 //
 //////	//tiang 1
 //	glPushMatrix();

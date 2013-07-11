@@ -166,6 +166,7 @@ void rumahMewah() {
 	glutSolidCube(30);
 	glTranslated(0.0, 0.0, 30.0);
 	glutSolidCube(30);
+	//perubahan
 	glPopMatrix();
 }
 
@@ -240,27 +241,40 @@ void display(void) {
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tambahin Objek dibawah ini
+
+	//segitiga
+	glPushMatrix();
+//	glScaled(5,5,5);
+//	glRotated(90,0,1,0);
+//	segitiga();
+	glutSolidTeapot(5);
+	glPopMatrix();
+
+	//Tangga
 	glPushMatrix();
 	glRotated(90, 0, 1, 0);
 	//glTranslated(55, 20, 60);
-
-	//tangga
 	glTranslated(30, 0, 60);
 	cylinder(3, 3, 10);
 	for (int x = 0; x < 3; x++) {
-		glTranslated(10, 10, 0);
+		glTranslated(11, 10, 0);
 		cylinder(5, 5, 10);
 	}
 	glPopMatrix();
 
 	//Tempat Minum galon
 	glPushMatrix();
+<<<<<<< HEAD
 	glTranslated(45.0, 0.0, -85.0);
 	glRotated(-90.0, 0.0, 1.0, 0.0);
+=======
+	glTranslated(60.0, 0.0, 85.0);
+	glRotated(90.0, 0.0, 1.0, 0.0);
+>>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
 	tempatminum();
 	glPopMatrix();
 
-////	//Rumah MeeuuaaHH
+	//Rumah
 	glPushMatrix();
 	//glRotated(90.0, 1.0, 0.0, 0.0);
 	glTranslated(50.0, 1.0, -85.0);
@@ -268,7 +282,7 @@ void display(void) {
 	rumahMewah();
 	glPopMatrix();
 
-//Pagar
+	//Pagar di tengah
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, -95.0, 5.0);
@@ -283,7 +297,7 @@ void display(void) {
 	cylinder(6.0, 6.0, 15.0);
 	glPopMatrix();
 
-//	//Hiasan Pohon Dipojok
+	//Hiasan Pohon Dipojok
 	glPushMatrix();
 	glTranslated(-90.0, 25.0, -90.0);
 	pohon();
@@ -310,7 +324,11 @@ void display(void) {
 	muterMuteran();
 	glPopMatrix();
 
+<<<<<<< HEAD
 	//pager
+=======
+	//pagar ditengah lurus
+>>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, 95.0, 5.0);
@@ -321,9 +339,10 @@ void display(void) {
 	}
 	glPopMatrix();
 
+	//pagar di pinggir
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(80.0, 95.0, 5.0);
+	glTranslated(85.0, -35.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
 	for (int x = 0; x < 4; x++) {
 		glTranslated(0.0, -15.0, 0.0);
@@ -364,7 +383,11 @@ void display(void) {
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();
 
+<<<<<<< HEAD
 	//tiang 1
+=======
+//////	//tiang 1
+>>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(90.0, 100.0, 0.0);
@@ -397,7 +420,12 @@ void display(void) {
 	bawahKandang(10);
 	glPopMatrix();
 
+<<<<<<< HEAD
 	//atas
+=======
+
+//	//atas
+>>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
 //	glPushMatrix();
 //	glTranslated(0.0, 150.0, 0.0);
 //	bawahKandang(10);

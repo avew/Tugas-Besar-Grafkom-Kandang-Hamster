@@ -264,13 +264,11 @@ void display(void) {
 
 	//Tempat Minum galon
 	glPushMatrix();
-<<<<<<< HEAD
 	glTranslated(45.0, 0.0, -85.0);
 	glRotated(-90.0, 0.0, 1.0, 0.0);
-=======
-	glTranslated(60.0, 0.0, 85.0);
+	glTranslated(173.0, 0.0, -20.0);
 	glRotated(90.0, 0.0, 1.0, 0.0);
->>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
+	glRotated(90.0, 0.0, 1.0, 0.0);
 	tempatminum();
 	glPopMatrix();
 
@@ -324,11 +322,8 @@ void display(void) {
 	muterMuteran();
 	glPopMatrix();
 
-<<<<<<< HEAD
 	//pager
-=======
 	//pagar ditengah lurus
->>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, 95.0, 5.0);
@@ -383,11 +378,8 @@ void display(void) {
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();
 
-<<<<<<< HEAD
 	//tiang 1
-=======
 //////	//tiang 1
->>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(90.0, 100.0, 0.0);
@@ -420,12 +412,9 @@ void display(void) {
 	bawahKandang(10);
 	glPopMatrix();
 
-<<<<<<< HEAD
 	//atas
-=======
 
 //	//atas
->>>>>>> 89e90a76b1fadfcbaa009182bb3ad77c204e68ec
 //	glPushMatrix();
 //	glTranslated(0.0, 150.0, 0.0);
 //	bawahKandang(10);

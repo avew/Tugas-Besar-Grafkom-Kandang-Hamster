@@ -166,6 +166,7 @@ void rumahMewah() {
 	glutSolidCube(30);
 	glTranslated(0.0, 0.0, 30.0);
 	glutSolidCube(30);
+	//perubahan
 	glPopMatrix();
 }
 
@@ -244,31 +245,31 @@ void display(void) {
 	glRotated(90, 0, 1, 0);
 	//glTranslated(55, 20, 60);
 
-	//tangga
+	//Tangga
 	glTranslated(30, 0, 60);
 	cylinder(3, 3, 10);
 	for (int x = 0; x < 3; x++) {
-		glTranslated(10, 10, 0);
+		glTranslated(11, 10, 0);
 		cylinder(5, 5, 10);
 	}
 	glPopMatrix();
 
 	//Tempat Minum galon
-//	glPushMatrix();
-//	glTranslated(45.0, 0.0, -85.0);
-//	glRotated(-90.0, 0.0, 1.0, 0.0);
-//	tempatminum();
-//	glPopMatrix();
+	glPushMatrix();
+	glTranslated(60.0, 0.0, 85.0);
+	glRotated(90.0, 0.0, 1.0, 0.0);
+	tempatminum();
+	glPopMatrix();
 
-////	//Rumah MeeuuaaHH
+	//Rumah
 	glPushMatrix();
 	//glRotated(90.0, 1.0, 0.0, 0.0);
 	glTranslated(50.0, 1.0, -85.0);
-	glRotated(90.0,0.0,1.0,0.0);
+	glRotated(90.0, 0.0, 1.0, 0.0);
 	rumahMewah();
 	glPopMatrix();
 
-//Pagar
+	//Pagar di tengah
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, -95.0, 5.0);
@@ -283,7 +284,7 @@ void display(void) {
 	cylinder(6.0, 6.0, 15.0);
 	glPopMatrix();
 
-//	//Hiasan Pohon Dipojok
+	//Hiasan Pohon Dipojok
 	glPushMatrix();
 	glTranslated(-90.0, 25.0, -90.0);
 	pohon();
@@ -303,14 +304,14 @@ void display(void) {
 	glTranslated(30.0, 0.0, 0.0);
 	pohon();
 	glPopMatrix();
-//
-//	//Muter"an
+
+	//Muter"an
 	glPushMatrix();
 	glTranslated(-90.0, 5.0, 50.0);
 	muterMuteran();
 	glPopMatrix();
 
-//pager
+	//pagar ditengah lurus
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, 95.0, 5.0);
@@ -321,9 +322,10 @@ void display(void) {
 	}
 	glPopMatrix();
 
+	//pagar di pinggir
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(80.0, 95.0, 5.0);
+	glTranslated(85.0, -35.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
 	for (int x = 0; x < 4; x++) {
 		glTranslated(0.0, -15.0, 0.0);
@@ -356,15 +358,14 @@ void display(void) {
 	glTranslated(-70.0, 20.0, -90.0);
 	pohon();
 	glPopMatrix();
-//
-//	//Tempat Minum
+
+	//Tempat Minum
 	glPushMatrix();
 	glTranslated(-60.0, 10.0, -60.0);
 	glRotated(-270.0, 1.0, 0.0, 0.0);
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();
 
-//
 //////	//tiang 1
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);

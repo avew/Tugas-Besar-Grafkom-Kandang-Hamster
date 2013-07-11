@@ -254,17 +254,17 @@ void display(void) {
 	glPopMatrix();
 
 	//Tempat Minum galon
-//	glPushMatrix();
-//	glTranslated(45.0, 0.0, -85.0);
-//	glRotated(-90.0, 0.0, 1.0, 0.0);
-//	tempatminum();
-//	glPopMatrix();
+	glPushMatrix();
+	glTranslated(45.0, 0.0, -85.0);
+	glRotated(-90.0, 0.0, 1.0, 0.0);
+	tempatminum();
+	glPopMatrix();
 
 ////	//Rumah MeeuuaaHH
 	glPushMatrix();
 	//glRotated(90.0, 1.0, 0.0, 0.0);
 	glTranslated(50.0, 1.0, -85.0);
-	glRotated(90.0,0.0,1.0,0.0);
+	glRotated(90.0, 0.0, 1.0, 0.0);
 	rumahMewah();
 	glPopMatrix();
 
@@ -303,14 +303,14 @@ void display(void) {
 	glTranslated(30.0, 0.0, 0.0);
 	pohon();
 	glPopMatrix();
-//
-//	//Muter"an
+
+	//Muter"an
 	glPushMatrix();
 	glTranslated(-90.0, 5.0, 50.0);
 	muterMuteran();
 	glPopMatrix();
 
-//pager
+	//pager
 	glPushMatrix();
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, 95.0, 5.0);
@@ -356,37 +356,36 @@ void display(void) {
 	glTranslated(-70.0, 20.0, -90.0);
 	pohon();
 	glPopMatrix();
-//
-//	//Tempat Minum
+
+	//Tempat Minum
 	glPushMatrix();
 	glTranslated(-60.0, 10.0, -60.0);
 	glRotated(-270.0, 1.0, 0.0, 0.0);
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();
 
-//
-//////	//tiang 1
+	//tiang 1
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(90.0, 100.0, 0.0);
 //	cylinder(3.0, 3.0, 150);
 //	glPopMatrix();
-//////
-////////	//tiang 2
+
+	//tiang 2
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(90.0, -100.0, 0.0);
 //	cylinder(3.0, 3.0, 150);
 //	glPopMatrix();
-////
-//////	//tiang 3
+
+	//tiang 3
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(-100.0, 100.0, 0.0);
 //	cylinder(3.0, 3.0, 150);
 //	glPopMatrix();
-////
-//////	//tiang 4
+
+	//tiang 4
 //	glPushMatrix();
 //	glRotated(-90, 1.0, 0.0, 0.0);
 //	glTranslated(-100.0, -100.0, 0.0);
@@ -398,7 +397,7 @@ void display(void) {
 	bawahKandang(10);
 	glPopMatrix();
 
-//	//atas
+	//atas
 //	glPushMatrix();
 //	glTranslated(0.0, 150.0, 0.0);
 //	bawahKandang(10);

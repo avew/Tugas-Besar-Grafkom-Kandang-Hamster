@@ -27,13 +27,12 @@ static int viewz = 80;
 
 float rot = 0;
 
-void initRendering() {
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_COLOR_MATERIAL);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
+void initRendering() { //inisisalisasi
+	glEnable(GL_DEPTH_TEST); //kedalaman
+	glEnable(GL_COLOR_MATERIAL); //warna
+	glEnable(GL_LIGHTING); //cahaya
+	glEnable(GL_LIGHT0); //lampu
 	glEnable(GL_NORMALIZE);
-
 	glShadeModel(GL_SMOOTH);
 
 }
@@ -104,11 +103,15 @@ void bawahKandang(int lebar) {
 
 void pohon() {
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.0, 1.0, 0.0);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glutSolidCone(15.0, 15.0, 15, 10);
 	glPopMatrix();
 
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(-1.0, 0.0, -20.0);
 	cylinder(8.0, 8.0, 20.0);
@@ -209,6 +212,8 @@ void atapRumah() {
 }
 void tempatminum() {
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glTranslated(0.0, 0.5, 0.0);
 	glutSolidCube(25);
 	glTranslated(0.0, 20.0, 0.0);
@@ -218,6 +223,8 @@ void tempatminum() {
 	glPopMatrix();
 
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.0, 0.204, 0.204);
 	glTranslated(0. - 1, 43.0, 0.0);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	cylinder(10.0, 10.0, 15.0);
@@ -243,15 +250,17 @@ void display(void) {
 	//Tambahin Objek dibawah ini
 
 	//segitiga
-	glPushMatrix();
+//	glPushMatrix();
 //	glScaled(5,5,5);
 //	glRotated(90,0,1,0);
 //	segitiga();
-	glutSolidTeapot(5);
-	glPopMatrix();
+//	glutSolidTeapot(5);
+//	glPopMatrix();
 
 	//Tangga
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(90, 0, 1, 0);
 	//glTranslated(55, 20, 60);
 	glTranslated(30, 0, 60);
@@ -264,7 +273,7 @@ void display(void) {
 
 	//Tempat Minum galon
 	glPushMatrix();
-	glTranslated(45.0, 0.0, -85.0);
+	glTranslated(20.0, 0.0, -85.0);
 	glRotated(-90.0, 0.0, 1.0, 0.0);
 	glTranslated(173.0, 0.0, -20.0);
 	glRotated(90.0, 0.0, 1.0, 0.0);
@@ -282,6 +291,8 @@ void display(void) {
 
 	//Pagar di tengah
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, -95.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
@@ -325,6 +336,8 @@ void display(void) {
 	//pager
 	//pagar ditengah lurus
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, 95.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
@@ -336,8 +349,10 @@ void display(void) {
 
 	//pagar di pinggir
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(85.0, -35.0, 5.0);
+	glTranslated(80.0, -35.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
 	for (int x = 0; x < 4; x++) {
 		glTranslated(0.0, -15.0, 0.0);
@@ -346,6 +361,8 @@ void display(void) {
 	glPopMatrix();
 
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(0.0, -10.0, 5.0);
 	cylinder(6.0, 6.0, 15.0);
@@ -373,6 +390,8 @@ void display(void) {
 
 	//Tempat Minum
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.0, 0.204, 0.204);
 	glTranslated(-60.0, 10.0, -60.0);
 	glRotated(-270.0, 1.0, 0.0, 0.0);
 	cylinder(15.0, 10.0, 3.0);
@@ -380,45 +399,47 @@ void display(void) {
 
 	//tiang 1
 //////	//tiang 1
-//	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(90.0, 100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
-//	glPopMatrix();
+	glPushMatrix();
+	glRotated(-90, 1.0, 0.0, 0.0);
+	glTranslated(90.0, 100.0, 0.0);
+	cylinder(3.0, 3.0, 100);
+	glPopMatrix();
 
 	//tiang 2
-//	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(90.0, -100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
-//	glPopMatrix();
+	glPushMatrix();
+	glRotated(-90, 1.0, 0.0, 0.0);
+	glTranslated(90.0, -100.0, 0.0);
+	cylinder(3.0, 3.0, 100);
+	glPopMatrix();
 
 	//tiang 3
-//	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(-100.0, 100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
-//	glPopMatrix();
+	glPushMatrix();
+	glRotated(-90, 1.0, 0.0, 0.0);
+	glTranslated(-100.0, 100.0, 0.0);
+	cylinder(3.0, 3.0, 100);
+	glPopMatrix();
 
 	//tiang 4
-//	glPushMatrix();
-//	glRotated(-90, 1.0, 0.0, 0.0);
-//	glTranslated(-100.0, -100.0, 0.0);
-//	cylinder(3.0, 3.0, 150);
-//	glPopMatrix();
+	glPushMatrix();
+	glRotated(-90, 1.0, 0.0, 0.0);
+	glTranslated(-100.0, -100.0, 0.0);
+	cylinder(3.0, 3.0, 100);
+	glPopMatrix();
 
 //	//Bawah
 	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3f(0, 1.0, 0.0);
 	bawahKandang(10);
 	glPopMatrix();
 
 	//atas
 
 //	//atas
-//	glPushMatrix();
-//	glTranslated(0.0, 150.0, 0.0);
-//	bawahKandang(10);
-//	glPopMatrix();
+	glPushMatrix();
+	glTranslated(0.0, 100.0, 0.0);
+	bawahKandang(10);
+	glPopMatrix();
 
 	glutSwapBuffers();
 	glFlush();

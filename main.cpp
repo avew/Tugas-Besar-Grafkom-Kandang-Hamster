@@ -33,11 +33,10 @@ void initRendering() { //inisisalisasi
 	glEnable(GL_LIGHTING); //cahaya
 	glEnable(GL_LIGHT0); //lampu
 	glEnable(GL_NORMALIZE);
-	glShadeModel(GL_SMOOTH);
-
+	glShadeModel(GL_SMOOTH); //kelembutan
 }
 
-float _angle = 60.0f;
+float _angle = 60.0f; //derajat  kamera
 
 const GLfloat light_ambient[] = { 0.3f, 0.3f, 0.3f, 1.0f };
 const GLfloat light_diffuse[] = { 0.7f, 0.7f, 0.7f, 1.0f };
@@ -52,6 +51,7 @@ const GLfloat mat_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 const GLfloat mat_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 const GLfloat high_shininess[] = { 100.0f };
 
+//cylinder dibuat beberapa objek dari solid cone sama solidtorus (payung)
 void cylinder(float alas, float atas, float tinggi) {
 	float i;
 	glPushMatrix();
@@ -65,59 +65,7 @@ void cylinder(float alas, float atas, float tinggi) {
 	glutSolidCone(atas, 0, 20, 1);
 	glPopMatrix();
 }
-
-void patokan(int panjang) {
-	int x;
-	glPushMatrix();
-	for (x = 0; x < panjang; x++) {
-		glutSolidCube(10);
-		glTranslated(10.0, 0.0, 0.0);
-	}
-	glPopMatrix();
-
-	glPushMatrix();
-	for (x = 0; x < panjang; x++) {
-		glTranslated(-10.0, 0.0, 0.0);
-		glutSolidCube(10);
-	}
-	glPopMatrix();
-}
-
-void bawahKandang(int lebar) {
-	int zplus;
-	int zmin;
-	patokan(10);
-	glPushMatrix();
-	for (zplus = 0; zplus < lebar; ++zplus) {
-		glTranslated(0.0, 0.0, 10.0);
-		patokan(10);
-	}
-	glPopMatrix();
-	glPushMatrix();
-	for (zmin = 0; zmin < lebar; ++zmin) {
-		glTranslated(0.0, 0.0, -10.0);
-		patokan(10);
-	}
-	glPopMatrix();
-}
-
-void pohon() {
-	glPushMatrix();
-	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-	glColor3d(0.0, 1.0, 0.0);
-	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glutSolidCone(15.0, 15.0, 15, 10);
-	glPopMatrix();
-
-	glPushMatrix();
-	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
-	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(-1.0, 0.0, -20.0);
-	cylinder(8.0, 8.0, 20.0);
-	glPopMatrix();
-}
-
+//segitiga dibuat jadi beberapa objek
 void segitiga() {
 	glBegin(GL_QUADS);
 	glVertex3f(-2, -2, 2);
@@ -147,6 +95,61 @@ void segitiga() {
 	glVertex3f(-2, -2, 2);
 	glEnd();
 }
+//panjang lebar bawah
+void patokan(int panjang) {
+	int x;
+	glPushMatrix();
+	for (x = 0; x < panjang; x++) {
+		glutSolidCube(10);
+		glTranslated(10.0, 0.0, 0.0);
+	}
+	glPopMatrix();
+
+	glPushMatrix();
+	for (x = 0; x < panjang; x++) {
+		glTranslated(-10.0, 0.0, 0.0);
+		glutSolidCube(10);
+	}
+	glPopMatrix();
+}
+
+//patokan dipake buat bawah kandang
+void bawahKandang(int lebar) {
+	int zplus;
+	int zmin;
+	patokan(10);
+	glPushMatrix();
+	for (zplus = 0; zplus < lebar; ++zplus) {
+		glTranslated(0.0, 0.0, 10.0);
+		patokan(10);
+	}
+	glPopMatrix();
+	glPushMatrix();
+	for (zmin = 0; zmin < lebar; ++zmin) {
+		glTranslated(0.0, 0.0, -10.0);
+		patokan(10);
+	}
+	glPopMatrix();
+}
+
+//pohon dibuat dari cylinder
+void pohon() {
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.0, 1.0, 0.0);
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glutSolidCone(15.0, 15.0, 15, 10);
+	glPopMatrix();
+
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(-1.0, 0.0, -20.0);
+	cylinder(8.0, 8.0, 20.0);
+	glPopMatrix();
+}
+
 void rumahMewah() {
 	//atap
 	glPushMatrix();
@@ -222,6 +225,8 @@ void atapRumah() {
 	segitiga();
 	glPopMatrix();
 }
+
+//tempat minum
 void tempatminum() {
 	glPushMatrix();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
@@ -251,6 +256,7 @@ void tempatminum() {
 
 }
 
+//render display
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
 	glClearDepth(1.0f);
@@ -259,7 +265,7 @@ void display(void) {
 	glLoadIdentity();
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
-	//Tambahin Objek dibawah ini
+	//semua objek yang akan di display
 
 	//Tangga
 	glPushMatrix();
@@ -337,8 +343,7 @@ void display(void) {
 	muterMuteran();
 	glPopMatrix();
 
-	//pager
-	//pagar ditengah lurus
+	//Pagar ditengah lurus
 	glPushMatrix();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
@@ -351,7 +356,7 @@ void display(void) {
 	}
 	glPopMatrix();
 
-	//pagar di pinggir
+	//Pagar di pinggir
 	glPushMatrix();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
@@ -402,7 +407,6 @@ void display(void) {
 	glPopMatrix();
 
 	//tiang 1
-//////	//tiang 1
 	glPushMatrix();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3d(0.0, 0.0, 0.0);
@@ -432,7 +436,7 @@ void display(void) {
 	cylinder(3.0, 3.0, 100);
 	glPopMatrix();
 
-//	//Bawah
+	//Bawah
 	glPushMatrix();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3f(0, 1.0, 0.0);
@@ -440,8 +444,6 @@ void display(void) {
 	glPopMatrix();
 
 	//atas
-
-//	//atas
 	glPushMatrix();
 	glTranslated(0.0, 100.0, 0.0);
 	bawahKandang(10);
@@ -548,7 +550,7 @@ int main(int argc, char **argv) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_STENCIL | GLUT_DEPTH); //add a stencil buffer to the window
 	glutInitWindowSize(800, 600);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Sepertinya kandang hamster");
+	glutCreateWindow("Kandang Hamster 3D");
 	init();
 
 	glutDisplayFunc(display);

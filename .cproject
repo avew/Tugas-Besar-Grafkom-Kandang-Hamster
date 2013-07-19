@@ -32,7 +32,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1928220165" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1531457407" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.libs.953253402" superClass="gnu.cpp.link.option.libs" valueType="libs">
+								<option id="gnu.cpp.link.option.libs.953253402" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="GL"/>
 									<listOptionValue builtIn="false" value="glut"/>
 									<listOptionValue builtIn="false" value="GLU"/>
@@ -118,10 +118,10 @@
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Release">
-			<resource resourceType="PROJECT" workspacePath="/Tugas-Besar-Grafkom-Kandang-Hamster"/>
+			<resource resourceType="PROJECT" workspacePath="/TugasBesarGrafkomKandangHamster"/>
 		</configuration>
 		<configuration configurationName="Debug">
-			<resource resourceType="PROJECT" workspacePath="/Tugas-Besar-Grafkom-Kandang-Hamster"/>
+			<resource resourceType="PROJECT" workspacePath="/TugasBesarGrafkomKandangHamster"/>
 		</configuration>
 	</storageModule>
 </cproject>

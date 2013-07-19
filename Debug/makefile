@@ -37,19 +37,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: Tugas-Besar-Grafkom-Kandang-Hamster
+all: TugasBesarGrafkomKandangHamster
 
 # Tool invocations
-Tugas-Besar-Grafkom-Kandang-Hamster: $(OBJS) $(USER_OBJS)
+TugasBesarGrafkomKandangHamster: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "Tugas-Besar-Grafkom-Kandang-Hamster" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "TugasBesarGrafkomKandangHamster" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) Tugas-Besar-Grafkom-Kandang-Hamster
+	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) TugasBesarGrafkomKandangHamster
 	-@echo ' '
 
 .PHONY: all clean dependents

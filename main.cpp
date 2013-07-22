@@ -450,7 +450,7 @@ void atapRumah() {
 	glPopMatrix();
 }
 
-unsigned int LoadTextureFromBmpFile(char *filename);
+//unsigned int LoadTextureFromBmpFile(char *filename);
 
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
@@ -746,7 +746,7 @@ void keyboard(unsigned char key, int x, int y) {
 }
 
 void reshape(int w, int h) {
-	glViewport(0, 0, (GLsizei) w, (GLsizei) h);
+	glViewport(0, 0, (GLsizei) w, (GLsizei) h); //// melakukan setting viewport dari suatu window, yaitu bagian dari window yang digunakan untuk menggambar.
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(60, (GLfloat) w / (GLfloat) h, 0.1, 1000.0);

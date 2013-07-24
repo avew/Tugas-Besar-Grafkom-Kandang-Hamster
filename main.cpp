@@ -215,7 +215,7 @@ Terrain* loadTerrain(const char* filename, float height) {
 
 float _angle = 60.0f;
 //buat tipe data terain
-Terrain* _terrain;
+Terrain* _terrain; //Inisialisasi terain
 Terrain* _terrainTanah;
 Terrain* _terrainAir;
 
@@ -232,12 +232,12 @@ const GLfloat mat_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 const GLfloat mat_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 const GLfloat high_shininess[] = { 100.0f };
 
-void cleanup() {
+void cleanup() { //menghilangkan resource image yang sudah d render
 	delete _terrain;
 	delete _terrainTanah;
 }
 
-//untuk di display
+//menampilkan terain
 void drawSceneTanah(Terrain *terrain, GLfloat r, GLfloat g, GLfloat b) {
 	//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	/*
@@ -255,12 +255,13 @@ void drawSceneTanah(Terrain *terrain, GLfloat r, GLfloat g, GLfloat b) {
 	 glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);
 	 glLightfv(GL_LIGHT0, GL_POSITION, lightPos0);
 	 */
+	//scala ukuran dari terain bawah
 	float scale = 200.0f / max(terrain->width() - 1, terrain->length() - 1);
 	glScalef(scale, scale, scale);
 	glTranslatef(-(float) (terrain->width() - 1) / 2, 0.0f,
 			-(float) (terrain->length() - 1) / 2);
-
-	glColor3f(r, g, b);
+	//warna dari struktur tanah bawah
+	glColor3f(0.8f,0.5f,0.2f); //coklat
 	for (int z = 0; z < terrain->length() - 1; z++) {
 		//Makes OpenGL draw a triangle at every three consecutive vertices
 		glBegin(GL_TRIANGLE_STRIP);
@@ -356,44 +357,48 @@ void galon() {
 void pohon() {
 	glPushMatrix();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-	glColor3d(0.0, 1.0, 0.0);
-	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glutSolidCone(15.0, 15.0, 15, 10);
+	glColor3d(0.2f,0.5f,0.2f); //warna dari daun pohon
+	glRotated(-90.0, 1.0, 0.0, 0.0); //di rotasi -90 derajat ke x
+	glutSolidCone(15.0, 15.0, 15, 10); //object kerucut
 	glPopMatrix();
 
 	glPushMatrix();
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
-	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(-1.0, 0.0, -20.0);
-	cylinder(6.0, 3.0, 20.0);
+	glRotated(-90.0, 1.0, 0.0, 0.0); ////di rotasi -90 derajat ke x
+	glTranslated(-1.0, 0.0, -20.0); // ditranslasi ke x -1 dan ke z -20
+	cylinder(6.0, 3.0, 20.0); //batang pohon
 	glPopMatrix();
 }
 
 void rumahMewah() {
-	//atap
+	//atap rumha
 	glPushMatrix();
-	glTranslated(0.0, 50.0, 16.0);
-	glRotated(90.0, 0.0, 0.0, 1.0);
-	glScaled(2.0, 15.0, 15.0);
-	segitiga();
+	glTranslated(0.0, 50.0, 16.0); //ditranslasi ke y 50 dan ke z 16
+	glRotated(90.0, 0.0, 0.0, 1.0); //dirotasi 90 derajat ke z
+	glScaled(2.0, 15.0, 15.0); //objek di skala ke x=2,y=15 dan ke z=15
+	segitiga(); //objek atap dibuat dari segitiga
 	glPopMatrix();
 
-	//rumah bawah atas
+	//rumah bagian tengah
 	glPushMatrix();
+	glEnable(GL_COLOR_MATERIAL); //mengaktifkan glColorMaterial
+	//jenis pencahayaan dimana efek pencahayaan  bersifat menyeluruh yang memiliki 2 parameter yaitu glColorMaterial(GLenum face,Glenum mode);
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3d(0.903921568627451, 0.5215686274509804, 0.2470588235294118);
-	glTranslated(0.0, 40.0, 17.5);
-	glutSolidCube(30);
+	glTranslated(0.0, 40.0, 17.5); //ditranslasi ke y=40 dan ke z=17,5
+	glutSolidCube(30); //mengambil objek dari openGL yaitu kubus
 	glPopMatrix();
 
-	//rumah bawah
+	//rumah bagian bawah
 	glPushMatrix();
+	glEnable(GL_COLOR_MATERIAL);//mengaktifkan glColorMaterial
+	//jenis pencahayaan dimana efek pencahayaan  bersifat menyeluruh yang memiliki 2 parameter yaitu glColorMaterial(GLenum face,Glenum mode);
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
-	glTranslated(0.0, 20.0, 0.0); //cube
+	glTranslated(0.0, 20.0, 0.0); //ditranslasi ke y=20
 	//glScaled(1.5, 1.5, 1.5);
-	glutSolidCube(30);
+	glutSolidCube(30);//mengambil objek dari openGL yaitu kubus
 	glTranslated(0.0, 0.0, 30.0);
 	glutSolidCube(30);
 	glPopMatrix();

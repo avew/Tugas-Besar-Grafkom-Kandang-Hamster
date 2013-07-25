@@ -32,6 +32,13 @@ static int viewz = 80;
 
 float rot = 0;
 
+
+GLuint texture[2];
+
+GLint slices = 16;
+GLint stacks = 16;
+
+
 //train 2D
 //class untuk terain 2D
 class Terrain {
@@ -219,9 +226,9 @@ Terrain* _terrain; //Inisialisasi terain
 Terrain* _terrainTanah;
 Terrain* _terrainAir;
 
-const GLfloat light_ambient[] = { 0.3f, 0.3f, 0.3f, 1.0f };
-const GLfloat light_diffuse[] = { 0.7f, 0.7f, 0.7f, 1.0f };
-const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+const GLfloat light_ambient[] = { 0.3f, 0.3f, 0.3f, 1.0f };//menyebabkan warna sekitar/ pantulan yang telah banyak
+const GLfloat light_diffuse[] = { 0.7f, 0.7f, 0.7f, 1.0f }; //cahaya yang diterima oleh material akan menyebar kesegala arah.
+const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f }; //mengambil sifat dari benda
 const GLfloat light_position[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 const GLfloat light_ambient2[] = { 0.3f, 0.3f, 0.3f, 0.0f };
@@ -239,22 +246,6 @@ void cleanup() { //menghilangkan resource image yang sudah d render
 
 //menampilkan terain
 void drawSceneTanah(Terrain *terrain, GLfloat r, GLfloat g, GLfloat b) {
-	//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	/*
-	 glMatrixMode(GL_MODELVIEW);
-	 glLoadIdentity();
-	 glTranslatef(0.0f, 0.0f, -10.0f);
-	 glRotatef(30.0f, 1.0f, 0.0f, 0.0f);
-	 glRotatef(-_angle, 0.0f, 1.0f, 0.0f);
-
-	 GLfloat ambientColor[] = {0.4f, 0.4f, 0.4f, 1.0f};
-	 glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
-
-	 GLfloat lightColor0[] = {0.6f, 0.6f, 0.6f, 1.0f};
-	 GLfloat lightPos0[] = {-0.5f, 0.8f, 0.1f, 0.0f};
-	 glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);
-	 glLightfv(GL_LIGHT0, GL_POSITION, lightPos0);
-	 */
 	//scala ukuran dari terain bawah
 	float scale = 200.0f / max(terrain->width() - 1, terrain->length() - 1);
 	glScalef(scale, scale, scale);
@@ -609,50 +600,11 @@ void display(void) {
 	cylinder(15.0, 10.0, 3.0);
 	glPopMatrix();
 
-	//tiang 1
-//		glPushMatrix();
-//		glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-//		glColor3d(0.0, 0.0, 0.0);
-//		glRotated(-90, 1.0, 0.0, 0.0);
-//		glTranslated(90.0, 100.0, 0.0);
-//		cylinder(3.0, 3.0, 100);
-//		glPopMatrix();
-//
-//		//tiang 2
-//		glPushMatrix();
-//		glRotated(-90, 1.0, 0.0, 0.0);
-//		glTranslated(90.0, -100.0, 0.0);
-//		cylinder(3.0, 3.0, 100);
-//		glPopMatrix();
-//
-//		//tiang 3
-//		glPushMatrix();
-//		glRotated(-90, 1.0, 0.0, 0.0);
-//		glTranslated(-100.0, 100.0, 0.0);
-//		cylinder(3.0, 3.0, 100);
-//		glPopMatrix();
-//
-//		//tiang 4
-//		glPushMatrix();
-//		glRotated(-90, 1.0, 0.0, 0.0);
-//		glTranslated(-100.0, -100.0, 0.0);
-//		cylinder(3.0, 3.0, 100);
-//		glPopMatrix();
-
 	glPushMatrix();
 	//glBindTexture(GL_TEXTURE_3D, texture[0]);
 	drawSceneTanah(_terrain, 0.3f, 0.9f, 0.0f);
 	glPopMatrix();
 
-//	glPushMatrix();
-//	//glBindTexture(GL_TEXTURE_3D, texture[0]);
-//	drawSceneTanah(_terrainTanah, 0.7f, 0.2f, 0.1f);
-//	glPopMatrix();
-//
-//	glPushMatrix();
-//	//glBindTexture(GL_TEXTURE_3D, texture[0]);
-//	drawSceneTanah(_terrainAir, 0.0f, 0.2f, 0.5f);
-//	glPopMatrix();
 
 	glutSwapBuffers();
 	glFlush();
@@ -703,6 +655,7 @@ static void kibor(int key, int x, int y) {
 		viewx--;
 		break;
 
+	//Keyboard F1 untuk memberikan efek pencahayaan menyeluruh
 	case GLUT_KEY_F1: {
 		glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
 		glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
@@ -711,6 +664,7 @@ static void kibor(int key, int x, int y) {
 	}
 		;
 		break;
+	//Keyboard F2 untuk mematikan efek pencahayaan
 	case GLUT_KEY_F2: {
 		glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient2);
 		glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse2);
@@ -726,7 +680,6 @@ static void kibor(int key, int x, int y) {
 
 void keyboard(unsigned char key, int x, int y) {
 	if (key == 'd') {
-
 		spin = spin - 1;
 		if (spin > 360.0)
 			spin = spin - 360.0;
@@ -759,17 +712,17 @@ void reshape(int w, int h) {
 }
 
 int main(int argc, char **argv) {
-	glutInit(&argc, argv);
+	glutInit(&argc, argv); //init
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_STENCIL | GLUT_DEPTH); //add a stencil buffer to the window
-	glutInitWindowSize(800, 600);
+	glutInitWindowSize(800, 600); //window size 800 x 600
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Sample Terain");
+	glutCreateWindow("Sample Terain"); //window judul
 	init();
 
-	glutDisplayFunc(display);
+	glutDisplayFunc(display); //fungsi display dipanggil
 	glutIdleFunc(display);
 	glutReshapeFunc(reshape);
-	glutSpecialFunc(kibor);
+	glutSpecialFunc(kibor); //fungsi keyboard
 
 	glutKeyboardFunc(keyboard);
 

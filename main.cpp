@@ -187,7 +187,7 @@ public:
 void initRendering() {
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_COLOR_MATERIAL);
-	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHTING); //params mengembalikan nilai Boolean yang mengindikasikan apakah pencahayaan diaktifkan.
 	glEnable(GL_LIGHT0);
 	glEnable(GL_NORMALIZE);
 	glShadeModel(GL_SMOOTH);
@@ -239,6 +239,7 @@ void cleanup() { //menghilangkan resource image yang sudah d render
 
 //menampilkan terain
 void drawSceneTanah(Terrain *terrain, GLfloat r, GLfloat g, GLfloat b) {
+	//glClear :buffer yang jelas untuk nilai preset;
 	//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	/*
 	 glMatrixMode(GL_MODELVIEW);
@@ -459,10 +460,14 @@ void atapRumah() {
 
 void display(void) {
 	glClearStencil(0); //clear the stencil buffer
-	glClearDepth(1.0f);
-	glClearColor(0.0, 0.6, 0.8, 1);
+	glClearDepth(1.0f); //menentukan nilai yang jelas untuk kedalaman buffer 
+	glClearColor(0.0, 0.6, 0.8, 1); //menentukan nilai-nilai yang jelas untuk warna buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); //clear the buffers
-	glLoadIdentity();
+	glLoadIdentity(); // menggantikan matriks saat ini dengan matriks identitas
+	//gluLookAt : mendefinisikan transformasi penglihatan
+	//eyex,	eyey, eyez : menentukan posisi titik penglihatan
+	//0.0, 0.0, 5.0, (centerx, centery, centerz) : menentukan posisi titik acuan
+	//0.0, 1.0, 0.0 (upx, upy, upz) : menentukan arah naix vektor
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
 	//Tempat Minum galon
@@ -655,7 +660,7 @@ void display(void) {
 //	glPopMatrix();
 
 	glutSwapBuffers();
-	glFlush();
+	glFlush(); // eksekusi kekuatan perintah GL dalam waktu terbatas
 	rot++;
 	angle++;
 
@@ -704,7 +709,13 @@ static void kibor(int key, int x, int y) {
 		break;
 
 	case GLUT_KEY_F1: {
-		glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+		// glLightf, glLighti, glLightfv, glLightiv : mengatur sumber cahaya
+		// GL_AMBIENT  :  berisi empat nilai integer atau floating-point yang menentukan RGBA intensitas ambient cahaya.
+		// GL_DIFFUSE  : berisi empat nilai integer atau floating-point yang menentukan intensitas RGBA menyebar cahaya.
+		// GL_SPECULAR : berisi empat nilai integer atau floating-point yang menentukan RGBA intensitas specular cahaya.
+		// GL_POSITION : berisi empat nilai integer atau floating-point yang menentukan posisi cahaya dalam homogen koordinat objek
+		
+		glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient); 
 		glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
 		glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient);
 		glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
@@ -752,9 +763,9 @@ void keyboard(unsigned char key, int x, int y) {
 
 void reshape(int w, int h) {
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h); //// melakukan setting viewport dari suatu window, yaitu bagian dari window yang digunakan untuk menggambar.
-	glMatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION); //menentukan matriks adalah matriks saat ini
 	glLoadIdentity();
-	gluPerspective(60, (GLfloat) w / (GLfloat) h, 0.1, 1000.0);
+	gluPerspective(60, (GLfloat) w / (GLfloat) h, 0.1, 1000.0); //gluPerspective – pengaturan persepektif
 	glMatrixMode(GL_MODELVIEW);
 }
 

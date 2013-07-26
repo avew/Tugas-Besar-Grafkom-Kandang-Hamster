@@ -470,7 +470,7 @@ void display(void) {
 	//0.0, 1.0, 0.0 (upx, upy, upz) : menentukan arah naix vektor
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
-	//Tempat Minum galon
+	//Tempat Minum galon 
 	glPushMatrix();
 	glTranslated(20.0, 0.0, -85.0);
 	glRotated(-90.0, 0.0, 1.0, 0.0);
